@@ -67,7 +67,8 @@ class DpsaModel(nn.Module):
 
         pooler_output = torch.cat([premise_hypothesis, hypothesis_premise], dim=-1)
         pooler_output = self.dropout(pooler_output)
-        output = self.linear(pooler_output)
+        temp = self.linear(pooler_output)
+        output = temp
 
         return output
 
